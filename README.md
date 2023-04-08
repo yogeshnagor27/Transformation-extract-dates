@@ -1,41 +1,23 @@
-Aufgabe: Funktion – Array von Bonuszeiten
+Task: Function – Array of bonus times
 
-In diesem Fall soll aus einem Objekt (ein Kunde) als Input der Funktion
-'toExtractDates' ein Array aus Objekten gebaut werden, dass Zeiträume (Start- und Enddaten) enthält.
-Ein Element des Arrays soll jeweils ein Objekt enhalten. Dieses Objekt enhält jeweils ein Startdatum und ein Entdatum.
-Relevante Daten sind unter dem optionalen Property 'ListOfPeriods' zu finden.
+In this case, an object (a customer) should be used as input of the function 'toExtractDates' an array of objects that contains time periods (start and end dates). One element of the array should contain one object at a time. This object contains a start date and a de-date. Relevant data can be found under the optional property 'ListOfPeriods'.
 
-Die Ergebniss sollten Beispielsweise so aussehen:
+For example, the results should look like this:
 
-toExtractDates(customer1) ("ListOfPeriods": " 15.03.2017 - 01.05.2017")
-=> [{
-startDate: '15.03.2017',
-endDate: '01.05.2017'
-}]
+toExtractDates(customer1) ("ListOfPeriods": " 15.03.2017 - 01.05.2017") => [{ startDate: '15.03.2017', endDate: '01.05.2017' }]
 
-toExtractDates(customer2) ("ListOfPeriods": "12.06.2008- 11.07.2008|12.08.2008 - 11.11.2008")
-=> [{
-startDate: '16.06.2008',
-endDate: '11.07.2008'
-},
-{
-startDate: '12.08.2008'
-endDate: '11.11.2008'
-}]
+toExtractDates(customer2) ("ListOfPeriods": "12.06.2008- 11.07.2008|12.08.2008 - 11.11.2008") => [{ startDate: '16.06.2008', endDate: '11.07.2008' }, { startDate: '12.08.2008' endDate: '11.11.2008' }]
 
-toExtractDates(customer3) ("ListOfPeriods": "NULL")
-=> []
+toExtractDates(customer3) ("ListOfPeriods": "NULL") => []
 
-toExtractDates(customer4) (keine Property "ListOfPeriods")
-=> []
+toExtractDates(customer4) (no property "ListOfPeriods") => []
 
-Anmerkungen:
+Notes:
 
-- wenn sinnvoll möglich, sollten TypeScript Definitionen verwendet werden
-- es können (beliebig viele) n-Zeiträume im 'ListOfPeriods' definiert sein
-- zwar ist das Format mit "Datum11 - Datum12 | Datum21 - Dautum22 | ..." fest, jedoch können Leerzeichen am Anfang, am Ende und zwischendrin entweder existieren, oder nicht da sein.
-- wenn die Daten als Strings nicht die erwartete Länge haben, sollte anstatt eines Array ein Error-String ('string length is invalid') ausgegeben werden
+TypeScript definitions are used.
 
-- Beispiele für Customer sind in ./src/data/customer.js zu finden.
+(any number) n periods can be defined in the 'ListOfPeriods'
 
-Zum Überprüfen Ihrer Lösung können Sie im Abschnitt Tests schauen.
+The format with "Date11 - Date12 | Date21 - Dautum22 | ..." fixed, but spaces at the beginning, at the end and in between can either exist or not be there.
+
+If the data as strings do not have the expected length an error string ('string length is invalid') should be output instead of an array.
